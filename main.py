@@ -1,7 +1,8 @@
 import string
 import random as rnd
 
-let = int(input("Quante lettere vuoi: \n"))
+let = int(input("Quanti caratteri vuoi: \n"))
+cosa = str(input("Che password vuoi creare? \n")) #facebook, instagram, ecc
 nums = ["0123456789"]
 chars = string.ascii_letters + "0123456789" + "!?£$%&=+#@"
 list = []
@@ -13,4 +14,7 @@ while loop == True:
   else:
     loop = True
 
-print(list)
+finals = "".join(list)
+file = open("passwords.txt", "a")
+file.write(cosa +  ": " + finals + "\n")
+file.close()
